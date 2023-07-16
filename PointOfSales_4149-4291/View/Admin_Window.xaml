@@ -1,0 +1,267 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PointOfSales_4149_4291.View"
+        xmlns:ViewModel="clr-namespace:PointOfSales_4149_4291.ViewModel" x:Class="PointOfSales_4149_4291.View.Admin_Window"
+        mc:Ignorable="d"
+        Title="Admin_Window" WindowStyle="None"
+        Height="500" Width="809"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" Background="Black">
+    <Window.Resources>
+
+        <Style x:Key="textBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="BorderBrush" Value="#FFACACAC"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="SelectionBrush" Value="#FFF0F46B"/>
+            <Setter Property="SelectionTextBrush" Value="#FF120202"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="SelectionBrush" Value="#FFF0F46B"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+
+
+
+
+
+
+        </Style>
+
+
+        <Style x:Key="List textBox" TargetType="{x:Type TextBlock}">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="81"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="2,0,0,0"/>
+            <Setter Property="Padding" Value="5,3,0,0"/>
+
+            <Setter Property="Background" Value="#FF2B2A2A"/>
+            <!--<Setter Property="SelectionBrush" Value="#FFF0F46B"/>-->
+            <!--<Setter Property="SelectionTextBrush" Value="#FF120202"/>-->
+            <Setter Property="Foreground" Value="White"/>
+            <!--<Setter Property="SelectionBrush" Value="#FFF0F46B"/>-->
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+
+
+
+
+
+
+        </Style>
+
+
+        <Style x:Key="min_and_close_styles" TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="20,0,0,0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#FF4F2828" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Maroon" BorderThickness="2" CornerRadius="10" >
+                            <ContentPresenter VerticalAlignment="Top" HorizontalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+
+            <Style.Triggers>
+
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Background" Value="Maroon"/>
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Cursor" Value="AppStarting"/>
+                    <Setter Property="Background" Value="#C32146"/>
+                </Trigger>
+            </Style.Triggers>
+
+
+
+
+        </Style>
+        <Style x:Key="topics" TargetType="{x:Type TextBlock}">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#FF4F2828" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+
+
+
+
+
+        </Style>
+        <Style x:Key="list_headings" TargetType="{x:Type TextBlock}">
+
+            <Setter Property="Width" Value="81"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="#FFDE8B8B"/>
+            <Setter Property="Margin" Value="1,9,0,0"/>
+            <Setter Property="Padding" Value="1,0,1,0"/>
+
+
+
+
+        </Style>
+        <Style x:Key="button_styles" TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="31"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="20,0,0,0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="Background" Value="#FF757575"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}"  BorderThickness="1.5" CornerRadius="5" BorderBrush="#FF464646" >
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+
+            <Style.Triggers>
+
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Background" Value="#455A64"/>
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Cursor" Value="AppStarting"/>
+                    <Setter Property="Background" Value="#424242"/>
+                </Trigger>
+            </Style.Triggers>
+
+
+
+
+        </Style>
+    </Window.Resources>
+    <Window.DataContext>
+        <ViewModel:Admin_Window_VM/>
+    </Window.DataContext>
+    <Border CornerRadius="15" BorderThickness="4" >
+        <Border.BorderBrush>
+            <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                <GradientStop Color="#FFD3B6DA"/>
+                <GradientStop Color="#FFC597D0" Offset="1"/>
+                <GradientStop Color="#FFA616C8" Offset="0.538"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Border.Background>
+            <ImageBrush ImageSource="/View/Window_Background.jpeg" Opacity="0.29" />
+        </Border.Background>
+        <StackPanel Margin="0,0,0,-4" Background="Transparent" Orientation="Vertical">
+            <Grid>
+
+                <Rectangle  Height="30" Margin="15,0,15,0" Fill="Black" VerticalAlignment="Top" />
+                <Ellipse HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Fill="Black" RenderTransformOrigin="1.017,1.025" Stroke="Black"/>
+                <Rectangle HorizontalAlignment="Left" Height="15" Margin="0,15,0,0" VerticalAlignment="Top" Width="15" Fill="Black"/>
+                <Ellipse HorizontalAlignment="Right" Height="30" Stroke="Black" VerticalAlignment="Top" Width="30" Fill="Black"/>
+                <Rectangle HorizontalAlignment="Right" Height="7" Margin="0,15,0,0" VerticalAlignment="Top" Width="15" Fill="Black"/>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Height="30">
+                        <TextBlock Text="Admin Window"  Foreground="#FFCFD8DC" VerticalAlignment="Top" Height="30" Width="625" Margin="20,0,0,0" FontWeight="Bold" FontSize="24" TextAlignment="Center" FontFamily="Times New Roman"/>
+                        <Button Content="-" Style="{DynamicResource min_and_close_styles}" Command="{Binding MinimizeButtonCommand}"  />
+                        <Button Content="X" Style="{DynamicResource min_and_close_styles}" Command="{Binding Close_ButtonCommand}" Foreground="Black"  />
+
+                    </StackPanel>
+                    <StackPanel Height="465" Orientation="Horizontal">
+                        <Rectangle Width="330" Height="464" >
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.485">
+                                    <GradientStop Color="#FF2D2B2B" Offset="1"/>
+                                    <GradientStop Color="#FF2C0000" Offset="0.199"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+
+                        </Rectangle>
+
+                        <StackPanel Width="330" Margin="-330,2,2,2">
+                            <TextBlock Text="User Type"  Style="{Binding Mode=OneWay, Source={StaticResource topics}}"/>
+
+
+
+                            <ComboBox HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="250" ItemsSource="{Binding UserTypeList}" SelectedItem="{Binding User_Type}" Height="25" Foreground="Black" Background="Black" BorderBrush="#FF411313"  FontSize="16" FontFamily="Times New Roman"/>
+                            <TextBlock Text="First Name" Style="{Binding Mode=OneWay, Source={StaticResource topics}}" Margin="0,16,0,0"/>
+                            <TextBox HorizontalAlignment="Center" Height="25" Margin="0,-1,0,0"  Text="{Binding First_Name}" Width="250" BorderBrush="#FFACACAC"  Background="Transparent" SelectionBrush="#FFF0F46B" SelectionTextBrush="#FF120202" Foreground="White" FontSize="16" FontFamily="Times New Roman" Style="{Binding Mode=OneWay, Source={StaticResource textBox}}"/>
+                            <TextBlock Text="Last Name" Style="{Binding Mode=OneWay, Source={StaticResource topics}}" Margin="0,8,0,0" />
+                            <TextBox  Text="{Binding Last_Name}" Style="{Binding Mode=OneWay, Source={StaticResource textBox}}" />
+                            <TextBlock Text="User Name" Style="{Binding Mode=OneWay, Source={StaticResource topics}}" Margin="0,10,0,0" />
+                            <TextBox Text="{Binding Pass_Word}" Style="{Binding Mode=OneWay, Source={StaticResource textBox}}"/>
+                            <TextBlock Text="Password" Style="{Binding Mode=OneWay, Source={StaticResource topics}}" Margin="0,8,0,0" />
+                            <TextBox Height="25" Width="250" Style="{Binding Mode=OneWay, Source={StaticResource textBox}}" Text="{Binding Pass_Word}"/>
+                            <TextBox Style="{Binding Mode=OneWay, Source={StaticResource textBox}}" Width="195" HorizontalAlignment="Left" Margin="6,10,0,-52" Height="38" Text="{Binding SearchBoxText}"/>
+                            <Button Content="Save" Style="{DynamicResource button_styles}" HorizontalAlignment="Left" Height="44" Margin="1,59,0,0" Width="100" Command="{Binding SaveCommand}"    />
+                            <Button Content="Search" Style="{DynamicResource button_styles}" HorizontalAlignment="Left" Height="44" Margin="204,-95,0,0" VerticalAlignment="Top" Width="100" Command="{Binding SearchCommand}"/>
+                            <Button Content="Remove" Style="{DynamicResource button_styles}" HorizontalAlignment="Left" Height="44" Margin="204,-45,0,0" VerticalAlignment="Top" Width="100" Command="{Binding DeleteCommand}"/>
+                            <Button Content="Add" Style="{DynamicResource button_styles}" HorizontalAlignment="Center" Height="44" Margin="-25,-44,0,-6" VerticalAlignment="Top" Width="100" Command="{Binding AddCommand}"/>
+
+                        </StackPanel>
+                        <Grid Width="464">
+                            <ListView HorizontalAlignment="Left" Height="437" Margin="20,13,0,0" VerticalAlignment="Top" Width="427" ItemsSource="{Binding Userlist}" SelectedItem="{Binding Selected_User}" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="#FFFFFCFC" Padding="0,36,0,0">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal"  Width="413" Margin="-1,0,0,0">
+                                            <TextBlock Text="{Binding UserType}"  Style="{Binding Mode=OneWay, Source={StaticResource List textBox}}"  />
+                                            <TextBlock Text="{Binding FirstName}" Style="{Binding Mode=OneWay, Source={StaticResource List textBox}}"/>
+                                            <TextBlock Text="{Binding LastName}" Style="{Binding Mode=OneWay, Source={StaticResource List textBox}}" />
+                                            <TextBlock Text="{Binding UserName}"  Style="{Binding Mode=OneWay, Source={StaticResource List textBox}}" />
+                                            <TextBlock Text="{Binding Password}"  Style="{Binding Mode=OneWay, Source={StaticResource List textBox}}" />
+                                        </StackPanel>
+
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <StackPanel Orientation="Horizontal" Height="37" VerticalAlignment="Top" Margin="27,11,0,0" Width="437" >
+                                <TextBlock Text="User Type" Style="{Binding Mode=OneWay, Source={StaticResource list_headings}}" Width="81" Padding="0,0,0,0" Margin="1,9,1,0"  />
+                                <TextBlock Text="First Name" Style="{Binding Mode=OneWay, Source={StaticResource list_headings}}" Width="81"/>
+                                <TextBlock Text="Last Name" Style="{Binding Mode=OneWay, Source={StaticResource list_headings}}" Margin="2,9,1,0" Width="81"/>
+                                <TextBlock Text="Username" Style="{Binding Mode=OneWay, Source={StaticResource list_headings}}" Margin="1,9,1,0"/>
+                                <TextBlock Text="Password" Style="{Binding Mode=OneWay, Source={StaticResource list_headings}}" Width="79"/>
+
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Border>
+</Window>
